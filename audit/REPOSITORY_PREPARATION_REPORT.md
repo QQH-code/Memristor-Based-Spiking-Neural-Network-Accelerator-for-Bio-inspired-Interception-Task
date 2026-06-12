@@ -109,6 +109,16 @@ The pending license placeholder was removed.
 - `docs/figure_description.md` and `figures/README.md` were tightened around the five manually curated figures.
 - `docs/release_notes_v0.1.0.md` was added as a draft release note for the initial public research-code release.
 
+## Homepage and Technical Positioning Update
+
+- README now clearly explains the bio-inspired interception task before showing figures.
+- README now explains the technical workflow: task formulation, SNN computation, hardware-oriented mapping, memristor/RRAM crossbar representation, Verilog-A model files, Spectre templates, and MATLAB-based analysis.
+- README presents the project as a technical research-code and workflow-documentation release.
+- Non-technical promotional framing was not added.
+- Documentation files were expanded to make the repository easier to understand for GitHub readers.
+- Formatting and smoke-test checks were rerun after the documentation changes.
+- The preparation report remains under `audit/` rather than the repository root.
+
 ## Spectre-Related Files Included as Templates
 
 - `spectre_templates/netlist_templates/crossbar_neuron_template.scs`

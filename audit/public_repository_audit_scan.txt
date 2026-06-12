@@ -4,30 +4,31 @@
 .\LICENSE:1:MIT License
 .\LICENSE:3:Copyright (c) 2026 Qianhou Qu
 .\LICENSE:8:to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-.\README.md:5:This repository provides organized MATLAB scripts, Verilog-A model files, sanitized Spectre workflow templates, selected public figures, and documentation for understanding the project workflow. Full circuit-level simulation requires an external Cadence/Spectre environment and the corresponding 130 nm PDK/ODK, which are not included due to licensing restrictions.
-.\README.md:39:- Qianhou Qu, Sheng Lu, Sungyong Jung, Qilian Liang, and Chenyun Pan, "Compact and Energy-Efficient Memristive Spiking Neuromorphic Accelerator for Bio-inspired Interception Tasks," arXiv:2605.31141, 2026.
-.\README.md:40:- Qianhou Qu, Sheng Lu, Liuting Shang, Jaihan Utailawon, Sungyong Jung, Qilian Liang, and Chenyun Pan, "Memristor-Based Spiking Neural Network Accelerator for Bio-inspired Interception Task," arXiv:2605.31299, 2026.
-.\README.md:58:spectre_templates/
-.\README.md:59:  Sanitized Spectre netlist and run-script templates. These require an external
-.\README.md:60:  Cadence/Spectre installation and a properly configured 130 nm PDK/ODK environment.
-.\README.md:67:  Documentation explaining the project flow, external dependencies, Spectre workflow,
-.\README.md:83:- [docs/project_flow.md](docs/project_flow.md) for how the MATLAB, Verilog-A, and Spectre workflow pieces relate.
-.\README.md:84:- [docs/spectre_simulation_workflow.md](docs/spectre_simulation_workflow.md) for external circuit-simulation requirements.
-.\README.md:89:The MATLAB and Spectre-related files reflect the original research workflow, but some scripts expect generated simulator outputs or local tool configuration that are not part of this public repository.
-.\README.md:91:## External Cadence/Spectre and PDK/ODK Requirements
-.\README.md:95:- Cadence Spectre
-.\README.md:96:- a valid Cadence license
-.\README.md:97:- a properly configured 130 nm PDK/ODK environment
-.\README.md:101:The public templates use placeholders such as `$SPECTRE_BIN`, `$PDK_ROOT`, `$SPECTRE_MODEL_DIR`, and `$CADENCE_HOME`.
-.\README.md:108:- Sanitized Spectre templates with placeholders instead of private paths.
-.\README.md:116:- PDK/ODK technology files.
-.\README.md:117:- Cadence installation files, license files, or environment files.
-.\README.md:118:- Raw Spectre outputs, logs, `.print` files, or simulator run directories.
-.\README.md:120:- Private paths, server paths, personal emails, or local setup files.
-.\README.md:132:## License
-.\README.md:134:This repository is released under the MIT License. See [LICENSE](LICENSE) for details.
-.\README.md:138:`memristor`, `spiking-neural-networks`, `neuromorphic-computing`, `vlsi`, `ai-hardware`, `spectre`, `verilog-a`, `rram`
-.\README.md:142:This repository is a curated public code/documentation release associated with the related research papers. It is not a complete end-to-end circuit reproduction package. Proprietary simulator files, PDK/ODK files, and licensed Cadence/Spectre resources must be supplied by users through their own authorized environment.
+.\README.md:3:This repository is a curated public research-code release for a memristor-based spiking neural network accelerator designed around a bio-inspired interception task. It includes selected MATLAB workflow scripts, Verilog-A model files, sanitized Spectre workflow templates, public figures, and documentation associated with the related papers.
+.\README.md:23:5. Use Verilog-A model files and Spectre workflow templates to support circuit-level evaluation.
+.\README.md:26:The full circuit-level workflow depends on licensed Cadence/Spectre tools and a compatible 130 nm PDK/ODK environment. These resources are not included in this public repository.
+.\README.md:58:- Qianhou Qu, Sheng Lu, Sungyong Jung, Qilian Liang, and Chenyun Pan, "Compact and Energy-Efficient Memristive Spiking Neuromorphic Accelerator for Bio-inspired Interception Tasks," arXiv:2605.31141, 2026.
+.\README.md:59:- Qianhou Qu, Sheng Lu, Liuting Shang, Jaihan Utailawon, Sungyong Jung, Qilian Liang, and Chenyun Pan, "Memristor-Based Spiking Neural Network Accelerator for Bio-inspired Interception Task," arXiv:2605.31299, 2026.
+.\README.md:77:spectre_templates/
+.\README.md:78:  Sanitized Spectre netlist and run-script templates. These require an external
+.\README.md:79:  Cadence/Spectre installation and a properly configured 130 nm PDK/ODK environment.
+.\README.md:86:  Documentation explaining the project flow, external dependencies, Spectre workflow,
+.\README.md:103:- [docs/project_flow.md](docs/project_flow.md) for how the MATLAB, Verilog-A, and Spectre workflow pieces relate.
+.\README.md:104:- [docs/spectre_simulation_workflow.md](docs/spectre_simulation_workflow.md) for external circuit-simulation requirements.
+.\README.md:109:The MATLAB and Spectre-related files reflect the original research workflow, but some scripts expect generated simulator outputs or local tool configuration that are not part of this public repository.
+.\README.md:111:## External Cadence/Spectre and PDK/ODK Requirements
+.\README.md:115:- Cadence Spectre
+.\README.md:116:- a valid Cadence license
+.\README.md:117:- a properly configured 130 nm PDK/ODK environment
+.\README.md:121:The public templates use placeholders such as `$SPECTRE_BIN`, `$PDK_ROOT`, `$SPECTRE_MODEL_DIR`, and `$CADENCE_HOME`.
+.\README.md:128:- Sanitized Spectre templates with placeholders instead of private paths.
+.\README.md:136:- PDK/ODK technology files.
+.\README.md:137:- Cadence installation files, license files, or environment files.
+.\README.md:138:- Raw Spectre outputs, logs, `.print` files, or simulator run directories.
+.\README.md:140:- Private paths, server paths, personal emails, or local setup files.
+.\README.md:152:## License
+.\README.md:154:This repository is released under the MIT License. See [LICENSE](LICENSE) for details.
+.\README.md:158:This repository is a curated public code/documentation release associated with the related research papers. It is not a complete end-to-end circuit reproduction package. Proprietary simulator files, PDK/ODK files, and licensed Cadence/Spectre resources must be supplied by users through their own authorized environment.
 .\docs\citation.md:9:1. Qianhou Qu, Sheng Lu, Sungyong Jung, Qilian Liang, and Chenyun Pan, "Compact and Energy-Efficient Memristive Spiking Neuromorphic Accelerator for Bio-inspired Interception Tasks," arXiv:2605.31141, 2026. DOI: 10.48550/arXiv.2605.31141.
 .\docs\citation.md:10:2. Qianhou Qu, Sheng Lu, Liuting Shang, Jaihan Utailawon, Sungyong Jung, Qilian Liang, and Chenyun Pan, "Memristor-Based Spiking Neural Network Accelerator for Bio-inspired Interception Task," arXiv:2605.31299, 2026. DOI: 10.48550/arXiv.2605.31299.
 .\docs\external_dependencies.md:26:- Cadence Spectre
@@ -39,20 +40,47 @@
 .\docs\overview.md:22:- 130 nm PDK/ODK technology files or model libraries.
 .\docs\overview.md:23:- Cadence license files or private environment setup files.
 .\docs\overview.md:29:This is a public research-code and workflow-organization package, not a standalone software product. The included files are intended to help readers understand the project structure, inspect public code/model artifacts, and adapt the workflow in their own authorized MATLAB and Cadence/Spectre environments.
+.\requirements.txt:2:# The research workflow itself is primarily MATLAB plus external Cadence/Spectre.
 .\docs\project_flow.md:23:- `src/matlab/software_model/run_spectre_crossbar_infer_norm.m`
 .\docs\project_flow.md:33:- `src/matlab/mapping/generate_spectre_crossbar_array.m`
 .\docs\project_flow.md:46:These files document the Verilog-A/device-model side of the workflow and resistance-level handling used by the research code. They are provided without proprietary PDK or simulator environment files.
-.\docs\project_flow.md:56:## 6. Spectre Workflow Templates
+.\docs\project_flow.md:56:## 6. Spectre-Based Neuron and Crossbar Workflow
 .\docs\project_flow.md:60:- `spectre_templates/README.md`
 .\docs\project_flow.md:61:- `spectre_templates/netlist_templates/crossbar_neuron_template.scs`
 .\docs\project_flow.md:62:- `spectre_templates/run_scripts/run_spectre_template.sh`
-.\docs\project_flow.md:70:- `src/matlab/software_model/spectre_infer.m`
-.\docs\project_flow.md:71:- `src/matlab/software_model/run_spectre_crossbar_infer_norm.m`
-.\docs\project_flow.md:76:These scripts appear to generate, run, or analyze circuit-level neuron/crossbar simulations. Full execution requires external Cadence/Spectre, a compatible 130 nm PDK/ODK, and generated simulator outputs that are intentionally not included.
-.\docs\project_flow.md:127:- sanitized Spectre templates
-.\docs\project_flow.md:133:- Cadence/Spectre installation
-.\docs\project_flow.md:134:- 130 nm PDK/ODK files
-.\docs\project_flow.md:135:- license and environment files
+.\docs\project_flow.md:68:- `src/matlab/software_model/spectre_infer.m`
+.\docs\project_flow.md:69:- `src/matlab/software_model/run_spectre_crossbar_infer_norm.m`
+.\docs\project_flow.md:74:These scripts appear to generate, run, or analyze circuit-level neuron/crossbar simulations. Full execution requires external Cadence/Spectre, a compatible 130 nm PDK/ODK, and generated simulator outputs that are intentionally not included.
+.\docs\project_flow.md:125:- sanitized Spectre templates
+.\docs\project_flow.md:131:- Cadence/Spectre installation
+.\docs\project_flow.md:132:- 130 nm PDK/ODK files
+.\docs\project_flow.md:133:- license and environment files
+.\tests\smoke_test.py:17:        "LICENSE",
+.\tests\smoke_test.py:33:        "spectre_templates",
+.\docs\release_notes_v0.1.0.md:9:- Sanitized Spectre workflow templates with placeholders instead of private paths.
+.\docs\release_notes_v0.1.0.md:11:- MIT License.
+.\docs\release_notes_v0.1.0.md:18:Full circuit-level simulation requires an external licensed Cadence/Spectre environment and a compatible 130 nm PDK/ODK. These resources are not included in the repository.
+.\docs\repository_curation_notes.md:11:The requested source folder name `SNN_snntorch_spectre_rram_stf_version 2 3`
+.\docs\repository_curation_notes.md:13:`SNN_snntorch_spectre_rram_stf_version3` was used as the primary source because
+.\docs\repository_curation_notes.md:14:it is the newest version by name and contains the most complete Spectre/SNN flow.
+.\docs\repository_curation_notes.md:16:The full PDF paper, full PPTX deck, generated Spectre logs, `.print` files,
+.\docs\repository_curation_notes.md:25:- `$PDK_ROOT`
+.\docs\repository_curation_notes.md:26:- `$SPECTRE_BIN`
+.\docs\repository_curation_notes.md:27:- `$CADENCE_HOME`
+.\docs\software_reproduction.md:9:- Review sanitized Spectre workflow templates.
+.\docs\software_reproduction.md:19:- Complete Spectre waveform generation.
+.\docs\software_reproduction.md:20:- PDK/ODK-dependent results.
+.\spectre_templates\README.md:1:# Spectre Templates
+.\spectre_templates\README.md:7:- a licensed Cadence/Spectre installation,
+.\spectre_templates\README.md:8:- a local 130 nm PDK/ODK setup,
+.\spectre_templates\README.md:10:- environment variables such as `$SPECTRE_BIN`, `$PDK_ROOT`, `$SPECTRE_MODEL_DIR`, and `$CADENCE_HOME`.
+.\spectre_templates\README.md:12:The repository does not include proprietary PDK/ODK files, Cadence environment files, license files, simulator binaries, raw simulator outputs, or server-specific paths.
+.\docs\spectre_and_pdk_setup.md:1:# Spectre and PDK Setup
+.\docs\spectre_and_pdk_setup.md:3:This repository does not include Cadence/Spectre tools, foundry PDK/ODK files, license files, or private model-library paths.
+.\docs\spectre_and_pdk_setup.md:5:To adapt the Spectre templates, configure local environment variables such as:
+.\docs\spectre_and_pdk_setup.md:8:export SPECTRE_BIN=/path/to/spectre
+.\docs\spectre_and_pdk_setup.md:9:export PDK_MODEL_FILE=/path/to/130nm/models.scs
+.\docs\spectre_and_pdk_setup.md:13:Then edit the template files under `spectre_templates/` for your own authorized environment.
 .\docs\spectre_simulation_workflow.md:1:# Spectre Simulation Workflow
 .\docs\spectre_simulation_workflow.md:3:This repository includes sanitized Spectre workflow templates, but it does not include a runnable Cadence/Spectre environment. Spectre is external because it is a licensed EDA tool, and compatible 130 nm PDK/ODK model libraries are also external technology resources.
 .\docs\spectre_simulation_workflow.md:7:- `spectre_templates/README.md`
@@ -71,60 +99,6 @@
 .\docs\spectre_simulation_workflow.md:42:- server setup scripts,
 .\docs\spectre_simulation_workflow.md:48:Treat the files under `spectre_templates/` as workflow documentation and starting templates. Before running them, replace placeholders with local environment variables and verify that all model includes and generated netlists point to files you are authorized to use.
 .\docs\spectre_simulation_workflow.md:50:The templates are intentionally conservative. They show the shape of the workflow without exposing private paths or licensed technology files.
-.\tests\smoke_test.py:17:        "LICENSE",
-.\tests\smoke_test.py:33:        "spectre_templates",
-.\docs\repository_curation_notes.md:11:The requested source folder name `SNN_snntorch_spectre_rram_stf_version 2 3`
-.\docs\repository_curation_notes.md:13:`SNN_snntorch_spectre_rram_stf_version3` was used as the primary source because
-.\docs\repository_curation_notes.md:14:it is the newest version by name and contains the most complete Spectre/SNN flow.
-.\docs\repository_curation_notes.md:16:The full PDF paper, full PPTX deck, generated Spectre logs, `.print` files,
-.\docs\repository_curation_notes.md:25:- `$PDK_ROOT`
-.\docs\repository_curation_notes.md:26:- `$SPECTRE_BIN`
-.\docs\repository_curation_notes.md:27:- `$CADENCE_HOME`
-.\docs\software_reproduction.md:9:- Review sanitized Spectre workflow templates.
-.\docs\software_reproduction.md:19:- Complete Spectre waveform generation.
-.\docs\software_reproduction.md:20:- PDK/ODK-dependent results.
-.\requirements.txt:2:# The research workflow itself is primarily MATLAB plus external Cadence/Spectre.
-.\docs\spectre_and_pdk_setup.md:1:# Spectre and PDK Setup
-.\docs\spectre_and_pdk_setup.md:3:This repository does not include Cadence/Spectre tools, foundry PDK/ODK files, license files, or private model-library paths.
-.\docs\spectre_and_pdk_setup.md:5:To adapt the Spectre templates, configure local environment variables such as:
-.\docs\spectre_and_pdk_setup.md:8:export SPECTRE_BIN=/path/to/spectre
-.\docs\spectre_and_pdk_setup.md:9:export PDK_MODEL_FILE=/path/to/130nm/models.scs
-.\docs\spectre_and_pdk_setup.md:13:Then edit the template files under `spectre_templates/` for your own authorized environment.
-.\docs\release_notes_v0.1.0.md:9:- Sanitized Spectre workflow templates with placeholders instead of private paths.
-.\docs\release_notes_v0.1.0.md:11:- MIT License.
-.\docs\release_notes_v0.1.0.md:18:Full circuit-level simulation requires an external licensed Cadence/Spectre environment and a compatible 130 nm PDK/ODK. These resources are not included in the repository.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:18:LICENSE
-.\audit\REPOSITORY_PREPARATION_REPORT.md:26:spectre_templates/
-.\audit\REPOSITORY_PREPARATION_REPORT.md:51:- `.print`, `.log`, raw Spectre output folders: excluded as generated simulator artifacts.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:53:- PDK/ODK, Cadence environment, license, and model-library files: excluded for licensing and privacy.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:94:## License Update
-.\audit\REPOSITORY_PREPARATION_REPORT.md:96:The pending license placeholder was removed.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:98:- The repository now includes an MIT License.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:99:- The license file is located at `LICENSE`.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:100:- The former pending-license placeholder file was deleted.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:108:- `docs/spectre_simulation_workflow.md` was expanded with placeholder meanings and external tool requirements.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:112:## Spectre-Related Files Included as Templates
-.\audit\REPOSITORY_PREPARATION_REPORT.md:114:- `spectre_templates/netlist_templates/crossbar_neuron_template.scs`
-.\audit\REPOSITORY_PREPARATION_REPORT.md:115:- `spectre_templates/run_scripts/run_spectre_template.sh`
-.\audit\REPOSITORY_PREPARATION_REPORT.md:116:- `spectre_templates/README.md`
-.\audit\REPOSITORY_PREPARATION_REPORT.md:122:Can run locally without Spectre:
-.\audit\REPOSITORY_PREPARATION_REPORT.md:129:Requires external Cadence/Spectre + 130 nm PDK/ODK:
-.\audit\REPOSITORY_PREPARATION_REPORT.md:132:- full crossbar/neuron Spectre experiments,
-.\audit\REPOSITORY_PREPARATION_REPORT.md:137:Python dependencies are limited to release-curation utilities and are listed in `requirements.txt` and `environment.yml`. MATLAB is required for the included MATLAB scripts. Cadence/Spectre, PDK/ODK files, and license setup must be supplied externally.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:149:- Server-side Linux paths were replaced with placeholders such as `$PROJECT_ROOT`, `$SPECTRE_BIN`, `$CADENCE_HOME`, `$PDK_ROOT`, or `$SPECTRE_MODEL_DIR`.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:151:Server-specific paths found and replaced:
-.\audit\REPOSITORY_PREPARATION_REPORT.md:153:- Cadence/Spectre installation paths were converted to environment variables.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:154:- PDK/model paths were converted to placeholders.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:156:Spectre/PDK/Cadence dependencies that remain:
-.\audit\REPOSITORY_PREPARATION_REPORT.md:160:Files excluded for privacy, license, size, or irrelevance:
-.\audit\REPOSITORY_PREPARATION_REPORT.md:182:- Run MATLAB/Spectre workflows in the intended licensed environment after configuring local placeholders.
-.\audit\REPOSITORY_PREPARATION_REPORT.md:193:- Reran text audit for private paths and sensitive terms; remaining hits are citation names, general external-dependency terms, or benign MATLAB variable names such as `token`/`tok` used in parsers.
-.\spectre_templates\README.md:1:# Spectre Templates
-.\spectre_templates\README.md:7:- a licensed Cadence/Spectre installation,
-.\spectre_templates\README.md:8:- a local 130 nm PDK/ODK setup,
-.\spectre_templates\README.md:10:- environment variables such as `$SPECTRE_BIN`, `$PDK_ROOT`, `$SPECTRE_MODEL_DIR`, and `$CADENCE_HOME`.
-.\spectre_templates\README.md:12:The repository does not include proprietary PDK/ODK files, Cadence environment files, license files, simulator binaries, raw simulator outputs, or server-specific paths.
-.\audit\release_manifest.json:5:  "primary_code_source": "$SOURCE_MATERIAL_ROOT/SNN_snntorch_spectre_rram_stf_version3",
 .\spectre_templates\run_scripts\run_spectre_template.sh:4:: "${SPECTRE_BIN:=spectre}"
 .\spectre_templates\run_scripts\run_spectre_template.sh:5:: "${PDK_MODEL_FILE:?Set PDK_MODEL_FILE to the public/local model path}"
 .\spectre_templates\run_scripts\run_spectre_template.sh:8:NETLIST="${1:-spectre_templates/netlist_templates/crossbar_neuron_template.scs}"
@@ -135,8 +109,33 @@
 .\spectre_templates\netlist_templates\crossbar_neuron_template.scs:8:simulator lang=spectre
 .\spectre_templates\netlist_templates\crossbar_neuron_template.scs:11:include "${PDK_MODEL_FILE}"
 .\spectre_templates\netlist_templates\crossbar_neuron_template.scs:19:// This template intentionally avoids embedding private PDK or server paths.
-.\src\matlab\analysis\capture_summary.m:57:    tok_cap = regexp(txt, 'captured\s*=\s*([01])', 'tokens', 'once');
-.\src\matlab\analysis\capture_summary.m:65:    tok_idx = regexp(txt, 'last_idx\s*=\s*(\d+)', 'tokens', 'once');
+.\audit\REPOSITORY_PREPARATION_REPORT.md:18:LICENSE
+.\audit\REPOSITORY_PREPARATION_REPORT.md:26:spectre_templates/
+.\audit\REPOSITORY_PREPARATION_REPORT.md:51:- `.print`, `.log`, raw Spectre output folders: excluded as generated simulator artifacts.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:53:- PDK/ODK, Cadence environment, license, and model-library files: excluded for licensing and privacy.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:94:## License Update
+.\audit\REPOSITORY_PREPARATION_REPORT.md:96:The pending license placeholder was removed.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:98:- The repository now includes an MIT License.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:99:- The license file is located at `LICENSE`.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:100:- The former pending-license placeholder file was deleted.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:108:- `docs/spectre_simulation_workflow.md` was expanded with placeholder meanings and external tool requirements.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:115:- README now explains the technical workflow: task formulation, SNN computation, hardware-oriented mapping, memristor/RRAM crossbar representation, Verilog-A model files, Spectre templates, and MATLAB-based analysis.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:122:## Spectre-Related Files Included as Templates
+.\audit\REPOSITORY_PREPARATION_REPORT.md:124:- `spectre_templates/netlist_templates/crossbar_neuron_template.scs`
+.\audit\REPOSITORY_PREPARATION_REPORT.md:125:- `spectre_templates/run_scripts/run_spectre_template.sh`
+.\audit\REPOSITORY_PREPARATION_REPORT.md:126:- `spectre_templates/README.md`
+.\audit\REPOSITORY_PREPARATION_REPORT.md:132:Can run locally without Spectre:
+.\audit\REPOSITORY_PREPARATION_REPORT.md:139:Requires external Cadence/Spectre + 130 nm PDK/ODK:
+.\audit\REPOSITORY_PREPARATION_REPORT.md:142:- full crossbar/neuron Spectre experiments,
+.\audit\REPOSITORY_PREPARATION_REPORT.md:147:Python dependencies are limited to release-curation utilities and are listed in `requirements.txt` and `environment.yml`. MATLAB is required for the included MATLAB scripts. Cadence/Spectre, PDK/ODK files, and license setup must be supplied externally.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:159:- Server-side Linux paths were replaced with placeholders such as `$PROJECT_ROOT`, `$SPECTRE_BIN`, `$CADENCE_HOME`, `$PDK_ROOT`, or `$SPECTRE_MODEL_DIR`.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:161:Server-specific paths found and replaced:
+.\audit\REPOSITORY_PREPARATION_REPORT.md:163:- Cadence/Spectre installation paths were converted to environment variables.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:164:- PDK/model paths were converted to placeholders.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:166:Spectre/PDK/Cadence dependencies that remain:
+.\audit\REPOSITORY_PREPARATION_REPORT.md:170:Files excluded for privacy, license, size, or irrelevance:
+.\audit\REPOSITORY_PREPARATION_REPORT.md:192:- Run MATLAB/Spectre workflows in the intended licensed environment after configuring local placeholders.
+.\audit\REPOSITORY_PREPARATION_REPORT.md:203:- Reran text audit for private paths and sensitive terms; remaining hits are citation names, general external-dependency terms, or benign MATLAB variable names such as `token`/`tok` used in parsers.
 .\src\matlab\software_model\energy_per_neuron.m:49:% ----- Spectre path -----
 .\src\matlab\software_model\energy_per_neuron.m:50:spectre_path = '$SPECTRE_BIN';
 .\src\matlab\software_model\energy_per_neuron.m:64:fprintf('Generating Spectre netlist: %s\n', scs_file);
@@ -149,6 +148,7 @@
 .\src\matlab\software_model\energy_per_neuron.m:218:[res, name] = import_spectre_data(c1);
 .\src\matlab\software_model\energy_per_neuron.m:378:function [res, name] = import_spectre_data(file)
 .\src\matlab\software_model\energy_per_neuron.m:497:tok = regexp(line, '([+\-]?\d*\.?\d+(?:[eE][+\-]?\d+)?)\s*([fpnumkKMGＴTG]?)', 'tokens');
+.\audit\release_manifest.json:5:  "primary_code_source": "$SOURCE_MATERIAL_ROOT/SNN_snntorch_spectre_rram_stf_version3",
 .\src\matlab\mapping\generate_spectre_crossbar_array.m:2:% Example Script: generate_spectre_crossbar_array
 .\src\matlab\mapping\generate_spectre_crossbar_array.m:6:%   in Cadence Spectre:
 .\src\matlab\mapping\generate_spectre_crossbar_array.m:63:%     waveform observation in Spectre.
@@ -165,6 +165,48 @@
 .\src\matlab\mapping\generate_spectre_crossbar_array.m:444:function [res, name] = import_spectre_data(file)
 .\src\matlab\mapping\generate_spectre_crossbar_array.m:445:% IMPORT_DATA  读取 Cadence Spectre 的 .print 文件（含多段输出）
 .\src\matlab\mapping\generate_spectre_crossbar_array.m:594:tok = regexp(line, '([+\-]?\d*\.?\d+(?:[eE][+\-]?\d+)?)\s*([fpnumkKMGＴTG]?)', 'tokens'); % 兼容全角T
+.\src\matlab\analysis\capture_summary.m:57:    tok_cap = regexp(txt, 'captured\s*=\s*([01])', 'tokens', 'once');
+.\src\matlab\analysis\capture_summary.m:65:    tok_idx = regexp(txt, 'last_idx\s*=\s*(\d+)', 'tokens', 'once');
+.\src\matlab\analysis\collect_net6_slope_all_prints.m:54:    tok_name = regexp(file_name, '^mc_single_neuron_50_(.+)\.print$', 'tokens', 'once');
+.\src\matlab\analysis\collect_net6_slope_all_prints.m:87:        tok = regexp(lines{i}, mc_pat, 'tokens', 'once');
+.\src\matlab\analysis\collect_net6_slope_all_prints.m:149:            vals = parse_spectre_row_unitsplit(s);
+.\src\matlab\analysis\collect_net6_slope_all_prints.m:207:function vals = parse_spectre_row_unitsplit(s)
+.\src\matlab\analysis\collect_net6_slope_all_prints.m:208:% Parse Spectre row like:
+.\src\matlab\analysis\collect_net6_slope_all_prints.m:215:    toks = regexp(s, '([+-]?\d*\.?\d+(?:[eE][+-]?\d+)?)\s*([fpnumkKMGT]?)', 'tokens');
+.\src\matlab\analysis\compare_two_print_membrane_shift.m:4:%   Read two Spectre .print files, extract membrane voltage waveform,
+.\src\matlab\analysis\compare_two_print_membrane_shift.m:23:[res1, name1] = import_spectre_data(file1);
+.\src\matlab\analysis\compare_two_print_membrane_shift.m:24:[res2, name2] = import_spectre_data(file2);
+.\src\matlab\analysis\compare_two_print_membrane_shift.m:75:function [res, name] = import_spectre_data(file)
+.\src\matlab\analysis\compare_two_print_membrane_shift.m:207:    'tokens');
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:1:function [output_norm_this, spike_count] = run_spectre_crossbar_infer_norm(x1, x2, x3, x4)
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:3:% Function: run_spectre_crossbar_infer_norm
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:6:%   Run Spectre-based SNN memristor crossbar inference for one sample.
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:302:fprintf('Generating Spectre netlist: %s\n', scs_file);
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:308:fprintf(fid, 'simulator lang=spectre\n');
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:395:% ===== Initial Conditions (Spectre) =====
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:600:%% ========== Run Spectre ==========
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:603:cfg.spectre_path = '$SPECTRE_BIN'; 
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:607:			  cfg.spectre_path, cfg.threads, cfg.netlist_path);
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:608:fprintf('Running Spectre...\n');
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:610:assert(status==0, "Spectre run failed.\n%s", cmdout);
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:611:fprintf('Spectre finished.\n');
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:624:	error('Spectre did not generate .print file: %s or %s', c1, c2);
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:627:[res, name] = import_spectre_data(print_file);
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:699:function [res, name] = import_spectre_data(file)
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:700:% IMPORT_DATA  读取 Cadence Spectre 的 .print 文件（含多段输出）
+.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:849:tok = regexp(line, '([+\-]?\d*\.?\d+(?:[eE][+\-]?\d+)?)\s*([fpnumkKMGＴTG]?)', 'tokens'); % 兼容全角T
+.\src\matlab\analysis\counterpart_integration_plot.m:53:% ----- Spectre path -----
+.\src\matlab\analysis\counterpart_integration_plot.m:54:spectre_path = '$SPECTRE_BIN';
+.\src\matlab\analysis\counterpart_integration_plot.m:68:fprintf('Generating Spectre netlist: %s\n', scs_file);
+.\src\matlab\analysis\counterpart_integration_plot.m:73:fprintf(fid, 'simulator lang=spectre\n');
+.\src\matlab\analysis\counterpart_integration_plot.m:189:% Run Spectre
+.\src\matlab\analysis\counterpart_integration_plot.m:191:cmd = sprintf('"%s" +mt=%d "%s"', spectre_path, threads, fullfile(pwd, scs_file));
+.\src\matlab\analysis\counterpart_integration_plot.m:192:fprintf('Running Spectre...\n');
+.\src\matlab\analysis\counterpart_integration_plot.m:194:assert(status == 0, 'Spectre run failed:\n%s', cmdout);
+.\src\matlab\analysis\counterpart_integration_plot.m:195:fprintf('Spectre finished.\n');
+.\src\matlab\analysis\counterpart_integration_plot.m:206:[res, name] = import_spectre_data(c1);
+.\src\matlab\analysis\counterpart_integration_plot.m:264:function [res, name] = import_spectre_data(file)
+.\src\matlab\analysis\counterpart_integration_plot.m:383:tok = regexp(line, '([+\-]?\d*\.?\d+(?:[eE][+\-]?\d+)?)\s*([fpnumkKMGＴTG]?)', 'tokens');
 .\audit\source_to_public_file_map.csv:2:matlab,$SOURCE_MATERIAL_ROOT/SNN_snntorch_spectre_rram_stf_version3/simulate_IF_neuron.m,src/matlab/software_model/simulate_IF_neuron.m
 .\audit\source_to_public_file_map.csv:3:matlab,$SOURCE_MATERIAL_ROOT/SNN_snntorch_spectre_rram_stf_version3/simulate_IF_neuron_v2.m,src/matlab/software_model/simulate_IF_neuron_v2.m
 .\audit\source_to_public_file_map.csv:4:matlab,$SOURCE_MATERIAL_ROOT/SNN_snntorch_spectre_rram_stf_version3/run_sim_crossbar_infer_norm_mc.m,src/matlab/software_model/run_sim_crossbar_infer_norm_mc.m
@@ -191,52 +233,6 @@
 .\audit\source_to_public_file_map.csv:25:veriloga,$SOURCE_MATERIAL_ROOT/SNN_snntorch_spectre_rram_stf_version3/resistor_rand_min.va,src/veriloga/resistor_rand_min.va
 .\audit\source_to_public_file_map.csv:26:weights,$SOURCE_MATERIAL_ROOT/SNN_snntorch_spectre_rram_stf_version3/fc1_weight.csv,src/data_examples/fc1_weight.csv
 .\audit\source_to_public_file_map.csv:27:weights,$SOURCE_MATERIAL_ROOT/SNN_snntorch_spectre_rram_stf_version3/fc2_weight.csv,src/data_examples/fc2_weight.csv
-.\src\matlab\analysis\collect_net6_slope_all_prints.m:54:    tok_name = regexp(file_name, '^mc_single_neuron_50_(.+)\.print$', 'tokens', 'once');
-.\src\matlab\analysis\collect_net6_slope_all_prints.m:87:        tok = regexp(lines{i}, mc_pat, 'tokens', 'once');
-.\src\matlab\analysis\collect_net6_slope_all_prints.m:149:            vals = parse_spectre_row_unitsplit(s);
-.\src\matlab\analysis\collect_net6_slope_all_prints.m:207:function vals = parse_spectre_row_unitsplit(s)
-.\src\matlab\analysis\collect_net6_slope_all_prints.m:208:% Parse Spectre row like:
-.\src\matlab\analysis\collect_net6_slope_all_prints.m:215:    toks = regexp(s, '([+-]?\d*\.?\d+(?:[eE][+-]?\d+)?)\s*([fpnumkKMGT]?)', 'tokens');
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:1:function [output_norm_this, spike_count] = run_spectre_crossbar_infer_norm(x1, x2, x3, x4)
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:3:% Function: run_spectre_crossbar_infer_norm
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:6:%   Run Spectre-based SNN memristor crossbar inference for one sample.
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:302:fprintf('Generating Spectre netlist: %s\n', scs_file);
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:308:fprintf(fid, 'simulator lang=spectre\n');
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:395:% ===== Initial Conditions (Spectre) =====
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:600:%% ========== Run Spectre ==========
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:603:cfg.spectre_path = '$SPECTRE_BIN'; 
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:607:			  cfg.spectre_path, cfg.threads, cfg.netlist_path);
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:608:fprintf('Running Spectre...\n');
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:610:assert(status==0, "Spectre run failed.\n%s", cmdout);
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:611:fprintf('Spectre finished.\n');
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:624:	error('Spectre did not generate .print file: %s or %s', c1, c2);
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:627:[res, name] = import_spectre_data(print_file);
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:699:function [res, name] = import_spectre_data(file)
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:700:% IMPORT_DATA  读取 Cadence Spectre 的 .print 文件（含多段输出）
-.\src\matlab\software_model\run_spectre_crossbar_infer_norm.m:849:tok = regexp(line, '([+\-]?\d*\.?\d+(?:[eE][+\-]?\d+)?)\s*([fpnumkKMGＴTG]?)', 'tokens'); % 兼容全角T
-.\src\matlab\analysis\compare_two_print_membrane_shift.m:4:%   Read two Spectre .print files, extract membrane voltage waveform,
-.\src\matlab\analysis\compare_two_print_membrane_shift.m:23:[res1, name1] = import_spectre_data(file1);
-.\src\matlab\analysis\compare_two_print_membrane_shift.m:24:[res2, name2] = import_spectre_data(file2);
-.\src\matlab\analysis\compare_two_print_membrane_shift.m:75:function [res, name] = import_spectre_data(file)
-.\src\matlab\analysis\compare_two_print_membrane_shift.m:207:    'tokens');
-.\src\matlab\analysis\counterpart_integration_plot.m:53:% ----- Spectre path -----
-.\src\matlab\analysis\counterpart_integration_plot.m:54:spectre_path = '$SPECTRE_BIN';
-.\src\matlab\analysis\counterpart_integration_plot.m:68:fprintf('Generating Spectre netlist: %s\n', scs_file);
-.\src\matlab\analysis\counterpart_integration_plot.m:73:fprintf(fid, 'simulator lang=spectre\n');
-.\src\matlab\analysis\counterpart_integration_plot.m:189:% Run Spectre
-.\src\matlab\analysis\counterpart_integration_plot.m:191:cmd = sprintf('"%s" +mt=%d "%s"', spectre_path, threads, fullfile(pwd, scs_file));
-.\src\matlab\analysis\counterpart_integration_plot.m:192:fprintf('Running Spectre...\n');
-.\src\matlab\analysis\counterpart_integration_plot.m:194:assert(status == 0, 'Spectre run failed:\n%s', cmdout);
-.\src\matlab\analysis\counterpart_integration_plot.m:195:fprintf('Spectre finished.\n');
-.\src\matlab\analysis\counterpart_integration_plot.m:206:[res, name] = import_spectre_data(c1);
-.\src\matlab\analysis\counterpart_integration_plot.m:264:function [res, name] = import_spectre_data(file)
-.\src\matlab\analysis\counterpart_integration_plot.m:383:tok = regexp(line, '([+\-]?\d*\.?\d+(?:[eE][+\-]?\d+)?)\s*([fpnumkKMGＴTG]?)', 'tokens');
-.\src\matlab\software_model\spectre_infer.m:16:% Run Spectre-based inference
-.\src\matlab\software_model\spectre_infer.m:18:[output_norm_this, spike_count] = run_spectre_crossbar_infer_norm(x1, x2, x3, x4);
-.\src\matlab\software_model\spectre_infer.m:32:[res, name] = import_spectre_data_local(print_file);
-.\src\matlab\software_model\spectre_infer.m:103:% Local function: import Spectre .print
-.\src\matlab\software_model\spectre_infer.m:105:function [res, name] = import_spectre_data_local(file)
-.\src\matlab\software_model\spectre_infer.m:236:tok = regexp(line, '([+\-]?\d*\.?\d+(?:[eE][+\-]?\d+)?)\s*([fpnumkKMGＴTG]?)', 'tokens');
 .\src\matlab\analysis\extract_mc_vout_rise_diff.m:4:%   Parse Spectre Monte Carlo .print file.
 .\src\matlab\analysis\extract_mc_vout_rise_diff.m:45:    tok = regexp(lines{i}, mc_pat, 'tokens', 'once');
 .\src\matlab\analysis\extract_mc_vout_rise_diff.m:112:        vals = parse_spectre_row_unitsplit(s);
@@ -249,6 +245,12 @@
 .\src\matlab\analysis\find_missing_spike_time_num.m:167:        sig_col  = find(strcmp(header_tokens, target_col_name), 1);
 .\src\matlab\analysis\find_missing_spike_time_num.m:266:        error('Cannot parse token: %s', tok);
 .\src\matlab\analysis\find_spike_time_num.m:49:    tok = regexp(task_names{i}, 'task_(\d+)$', 'tokens', 'once');
+.\src\matlab\software_model\spectre_infer.m:16:% Run Spectre-based inference
+.\src\matlab\software_model\spectre_infer.m:18:[output_norm_this, spike_count] = run_spectre_crossbar_infer_norm(x1, x2, x3, x4);
+.\src\matlab\software_model\spectre_infer.m:32:[res, name] = import_spectre_data_local(print_file);
+.\src\matlab\software_model\spectre_infer.m:103:% Local function: import Spectre .print
+.\src\matlab\software_model\spectre_infer.m:105:function [res, name] = import_spectre_data_local(file)
+.\src\matlab\software_model\spectre_infer.m:236:tok = regexp(line, '([+\-]?\d*\.?\d+(?:[eE][+\-]?\d+)?)\s*([fpnumkKMGＴTG]?)', 'tokens');
 .\src\matlab\analysis\integration_compare_plot.m:4:%   Read two Spectre .print files:
 .\src\matlab\analysis\integration_compare_plot.m:29:[res_p, name_p] = import_spectre_data(print_proposed);
 .\src\matlab\analysis\integration_compare_plot.m:30:[res_b, name_b] = import_spectre_data(print_baseline);

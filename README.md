@@ -1,40 +1,59 @@
 # Memristor-Based Spiking Neural Network Accelerator
 
-Curated public research-code release for the memristor-based spiking neural-network accelerator for bio-inspired interception tasks.
-
-This repository provides organized MATLAB scripts, Verilog-A model files, sanitized Spectre workflow templates, selected public figures, and documentation for understanding the project workflow. Full circuit-level simulation requires an external Cadence/Spectre environment and the corresponding 130 nm PDK/ODK, which are not included due to licensing restrictions.
+This repository is a curated public research-code release for a memristor-based spiking neural network accelerator designed around a bio-inspired interception task. It includes selected MATLAB workflow scripts, Verilog-A model files, sanitized Spectre workflow templates, public figures, and documentation associated with the related papers.
 
 Repository URL:
 
 <https://github.com/QQH-code/Memristor-Based-Spiking-Neural-Network-Accelerator-for-Bio-inspired-Interception-Task>
 
-## Repository Status
+## Motivation
 
-This repository is a curated public research-code release associated with the related papers. It is intended to document the research workflow and provide public access to selected code, models, templates, and figures. It is not a complete turnkey reproduction package.
+This project studies a bio-inspired interception task in which a predator-like agent uses motion-related information to predict and respond to a moving target. The task provides a compact benchmark for evaluating event-driven neural computation, closed-loop trajectory behavior, and hardware-aware implementation of spiking neural networks.
 
-## Project Overview
+Rather than treating the SNN only as a software model, this work explores how the network can be mapped toward memristor/RRAM-based synaptic hardware and neuron-level VLSI circuits. The goal is to connect task-level behavior, SNN computation, device/circuit modeling, and system-level evaluation in a single research workflow.
 
-### Bio-inspired interception task
+## Technical Approach
+
+The workflow combines software-level SNN modeling with hardware-oriented mapping and circuit simulation:
+
+1. Formulate the bio-inspired interception task using predator/prey position and motion variables.
+2. Use an SNN model to process task-related inputs and generate prediction or control outputs.
+3. Map trained or selected weights into hardware-oriented representations.
+4. Represent synaptic computation using memristor/RRAM-inspired crossbar structures.
+5. Use Verilog-A model files and Spectre workflow templates to support circuit-level evaluation.
+6. Analyze trajectory behavior, waveform-level results, and variation effects through MATLAB-based scripts.
+
+The full circuit-level workflow depends on licensed Cadence/Spectre tools and a compatible 130 nm PDK/ODK environment. These resources are not included in this public repository.
+
+## Research Context
+
+This repository sits at the intersection of spiking neural networks, memristor-based computing, neuromorphic circuits, and VLSI implementation. It is intended as a curated public release of selected code, model files, workflow templates, figures, and citation metadata associated with the related papers.
+
+## Project Overview Figures
+
+### 1. Bio-inspired interception task
 
 ![Bio-inspired interception task overview](figures/paper_figures/fig01_task_overview.png)
 
-### Memristor-based SNN accelerator architecture
+### 2. Memristor-based SNN accelerator architecture
 
 ![Memristor-based SNN accelerator architecture](figures/paper_figures/fig02_accelerator_architecture.png)
 
-### System-level results
+### 3. Representative system-level interception trajectories
 
-![System-level result 1](figures/paper_figures/fig03_system_level_result_1.png)
+![Representative system-level interception trajectories](figures/paper_figures/fig03_system_level_result_1.png)
 
-![System-level result 2](figures/paper_figures/fig04_system_level_result_2.png)
+### 4. Additional system-level trajectory behavior
 
-### Neuron layout
+![Additional system-level trajectory behavior](figures/paper_figures/fig04_system_level_result_2.png)
 
-![Neuron layout](figures/paper_figures/fig05_neuron_layout.png)
+### 5. Neuron layout for VLSI implementation
+
+![Neuron layout for VLSI implementation](figures/paper_figures/fig05_neuron_layout.png)
 
 ## Associated Papers
 
-Please cite both related papers if you use this repository, its workflow templates, figures, or ideas:
+Please cite the related papers if you use this repository, its workflow templates, figures, or ideas:
 
 - Qianhou Qu, Sheng Lu, Sungyong Jung, Qilian Liang, and Chenyun Pan, "Compact and Energy-Efficient Memristive Spiking Neuromorphic Accelerator for Bio-inspired Interception Tasks," arXiv:2605.31141, 2026.
 - Qianhou Qu, Sheng Lu, Liuting Shang, Jaihan Utailawon, Sungyong Jung, Qilian Liang, and Chenyun Pan, "Memristor-Based Spiking Neural Network Accelerator for Bio-inspired Interception Task," arXiv:2605.31299, 2026.
@@ -53,7 +72,7 @@ src/veriloga/
   for reference and simulation-template purposes.
 
 src/data_examples/
-  Small public example CSV/data files that are safe to include.
+  Small public CSV/data examples that are safe to include.
 
 spectre_templates/
   Sanitized Spectre netlist and run-script templates. These require an external
@@ -68,11 +87,12 @@ docs/
   figure descriptions, and citation information.
 
 audit/
-  Source-to-public file map, figure inventory, and public repository audit records.
+  Source-to-public file map, figure inventory, release-curation notes, and public
+  repository audit records.
 
 tests/
-  Lightweight repository-integrity checks. These tests do not generate artificial
-  scientific results.
+  Lightweight repository-integrity checks. These tests do not generate scientific
+  results or run circuit simulations.
 ```
 
 ## How to Read This Repository
@@ -132,10 +152,6 @@ This check only verifies the public release structure and excluded-artifact rule
 ## License
 
 This repository is released under the MIT License. See [LICENSE](LICENSE) for details.
-
-## Suggested GitHub Topics
-
-`memristor`, `spiking-neural-networks`, `neuromorphic-computing`, `vlsi`, `ai-hardware`, `spectre`, `verilog-a`, `rram`
 
 ## Disclaimer
 

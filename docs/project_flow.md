@@ -2,7 +2,7 @@
 
 This document maps the public repository files to the research workflow. It is intentionally conservative: several scripts depend on generated simulator outputs or local tool setup that are not included in the public release.
 
-## 1. Bio-Inspired Interception Task Formulation
+## 1. Task Formulation
 
 The task-level context is shown in:
 
@@ -12,7 +12,7 @@ The task-level context is shown in:
 
 These figures illustrate the interception setting and representative trajectory-level results. The repository does not include the full private experiment workspace used to generate every task result.
 
-## 2. SNN Software Modeling / Training / Inference Preparation
+## 2. SNN Software Modeling and Inference
 
 Relevant public files include:
 
@@ -35,7 +35,7 @@ Relevant files include:
 
 The CSV files provide small public example weight data. The MATLAB mapping scripts are intended for converting or organizing software-level values into circuit-oriented crossbar or resistance-level representations.
 
-## 4. Memristor / RRAM Modeling and Resistance-Level Handling
+## 4. Memristor/RRAM Synaptic Representation
 
 Relevant files include:
 
@@ -45,7 +45,7 @@ Relevant files include:
 
 These files document the Verilog-A/device-model side of the workflow and resistance-level handling used by the research code. They are provided without proprietary PDK or simulator environment files.
 
-## 5. Verilog-A Model Files
+## 5. Verilog-A Device/Model Support
 
 The public Verilog-A model files are stored in:
 
@@ -53,7 +53,7 @@ The public Verilog-A model files are stored in:
 
 These files are reference/model artifacts from the research workflow. They may require simulator-specific configuration and compatible model libraries to run in a real circuit environment.
 
-## 6. Spectre Workflow Templates
+## 6. Spectre-Based Neuron and Crossbar Workflow
 
 Relevant files include:
 
@@ -63,9 +63,7 @@ Relevant files include:
 
 These are sanitized templates. They use placeholders and environment variables instead of private paths. They are intended as workflow documentation and starting templates, not turnkey simulator-ready files.
 
-## 7. Neuron / Crossbar Circuit Simulation Workflow
-
-Relevant MATLAB scripts include:
+Additional circuit-oriented workflow scripts include:
 
 - `src/matlab/software_model/spectre_infer.m`
 - `src/matlab/software_model/run_spectre_crossbar_infer_norm.m`
@@ -75,7 +73,7 @@ Relevant MATLAB scripts include:
 
 These scripts appear to generate, run, or analyze circuit-level neuron/crossbar simulations. Full execution requires external Cadence/Spectre, a compatible 130 nm PDK/ODK, and generated simulator outputs that are intentionally not included.
 
-## 8. Waveform Parsing and Result Analysis
+## 7. MATLAB-Based Waveform Parsing and Analysis
 
 Relevant files include:
 
@@ -88,7 +86,7 @@ Relevant files include:
 
 These scripts are intended for parsing generated waveform or `.print` outputs, extracting spike timing, comparing membrane behavior, and summarizing simulation metrics.
 
-## 9. System-Level Trajectory Evaluation
+## 8. System-Level Trajectory Evaluation
 
 Representative public figures are stored in:
 
@@ -97,7 +95,7 @@ Representative public figures are stored in:
 
 The repository includes selected public figures and workflow scripts, but not the full private dataset/run environment used for all trajectory evaluations.
 
-## 10. Monte Carlo / Variation Analysis
+## 9. Monte Carlo / Variation Analysis
 
 Relevant files include:
 
@@ -107,7 +105,7 @@ Relevant files include:
 
 These files indicate Monte Carlo or variation-oriented analysis flows. Generated Monte Carlo outputs are not included.
 
-## 11. Public Figures and Documentation
+## 10. Public Figures and Documentation
 
 Public-facing documentation and figures are stored in:
 
@@ -135,4 +133,3 @@ External or omitted:
 - license and environment files
 - raw simulator outputs
 - generated `.print`, `.mat`, `.fig`, and run directories
-
