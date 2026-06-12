@@ -61,7 +61,7 @@ Relevant files include:
 - `spectre_templates/netlist_templates/crossbar_neuron_template.scs`
 - `spectre_templates/run_scripts/run_spectre_template.sh`
 
-These are sanitized templates. They use placeholders and environment variables instead of private paths. They are intended as workflow documentation and starting templates, not turnkey simulator-ready files.
+These are sanitized templates. They use placeholders and environment variables instead of private paths. They are intended as workflow documentation and starting templates, not ready-to-run simulator decks.
 
 Additional circuit-oriented workflow scripts include:
 

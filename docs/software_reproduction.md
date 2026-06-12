@@ -7,11 +7,6 @@ What users can do locally:
 - Inspect the MATLAB scripts under `src/matlab/`.
 - Inspect the Verilog-A model files under `src/veriloga/`.
 - Review sanitized Spectre workflow templates.
-- Run repository-integrity checks with:
-
-```bash
-python tests/smoke_test.py
-```
 
 What users cannot reproduce from this repository alone:
 
@@ -21,4 +16,3 @@ What users cannot reproduce from this repository alone:
 - Analyses that require omitted generated `.print`, `.mat`, or raw simulator files.
 
 The included files are intended to document and organize the research workflow while respecting licensing, privacy, and artifact-size boundaries.
-

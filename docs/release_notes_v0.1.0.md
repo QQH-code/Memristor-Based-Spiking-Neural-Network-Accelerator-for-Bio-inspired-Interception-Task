@@ -19,4 +19,4 @@ Full circuit-level simulation requires an external licensed Cadence/Spectre envi
 
 ## Notes
 
-This release is intended as a public research-code and workflow-documentation package. It is not a complete turnkey reproduction package.
+This release is intended as a public research-code and workflow-documentation package. It is not a complete standalone reproduction package.

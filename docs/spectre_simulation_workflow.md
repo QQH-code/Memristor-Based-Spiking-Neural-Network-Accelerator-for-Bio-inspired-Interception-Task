@@ -41,7 +41,7 @@ This repository does not provide:
 - simulator binaries,
 - server setup scripts,
 - raw simulator outputs,
-- complete turnkey circuit-level reproduction.
+- complete standalone circuit-level reproduction.
 
 ## How To Use the Templates
 

@@ -2,7 +2,7 @@
 
 ## Repository Utilities
 
-The public Python utilities are limited to release curation and integrity checks. Install the lightweight dependency set with:
+The public Python dependency file is kept lightweight for repository curation and figure/audit metadata workflows. Install it only if you plan to run or adapt those helper workflows:
 
 ```bash
 pip install -r requirements.txt
@@ -30,4 +30,3 @@ Full circuit-level simulation requires external tools and files that are not dis
 - local simulator run directories
 
 The placeholders `$SPECTRE_BIN`, `$PDK_ROOT`, `$SPECTRE_MODEL_DIR`, and `$CADENCE_HOME` are used in documentation/templates to avoid private paths.
-

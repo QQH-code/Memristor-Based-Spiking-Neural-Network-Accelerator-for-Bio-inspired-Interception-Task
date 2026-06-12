@@ -25,7 +25,6 @@ src/veriloga/
 src/data_examples/
 spectre_templates/
 figures/
-tests/
 audit/
 ```
 
@@ -62,7 +61,7 @@ The artificial LIF quick-start demo was removed during the finalization pass.
 - `scripts/generate_plots.py` was removed because it only regenerated the toy demo plot.
 - The generated toy LIF plot was removed.
 - README and documentation no longer present a toy demo as part of the paper workflow.
-- `tests/smoke_test.py` now checks repository integrity rather than generating artificial scientific results.
+- The smoke-test / integrity-check files were removed rather than replaced with another artificial demo.
 
 The repository now focuses on actual available research files, sanitized templates, public figures, documentation, and audit records.
 
@@ -109,14 +108,15 @@ The pending license placeholder was removed.
 - `docs/figure_description.md` and `figures/README.md` were tightened around the five manually curated figures.
 - `docs/release_notes_v0.1.0.md` was added as a draft release note for the initial public research-code release.
 
-## Homepage and Technical Positioning Update
+## Homepage and Documentation Update
 
 - README now clearly explains the bio-inspired interception task before showing figures.
 - README now explains the technical workflow: task formulation, SNN computation, hardware-oriented mapping, memristor/RRAM crossbar representation, Verilog-A model files, Spectre templates, and MATLAB-based analysis.
-- README presents the project as a technical research-code and workflow-documentation release.
+- README presents the project as a technical research-code release.
 - Non-technical promotional framing was not added.
+- `CITATION.cff` was checked as readable multi-line CFF/YAML-style metadata.
+- The smoke-test / integrity-check section was removed.
 - Documentation files were expanded to make the repository easier to understand for GitHub readers.
-- Formatting and smoke-test checks were rerun after the documentation changes.
 - The preparation report remains under `audit/` rather than the repository root.
 
 ## Spectre-Related Files Included as Templates
@@ -131,7 +131,6 @@ All private paths were replaced by placeholders and environment variables.
 
 Can run locally without Spectre:
 
-- repository-integrity smoke test,
 - inspection of MATLAB scripts,
 - inspection of Verilog-A files,
 - inspection of public figures and documentation.
@@ -199,5 +198,5 @@ Remaining manual review before release:
 - Replaced the old auto-extracted figure set with the manually curated figure set.
 - Generated `audit/figure_inventory.csv` and `audit/figure_inventory_summary.json`.
 - Added draft release notes in `docs/release_notes_v0.1.0.md`.
-- Ran the repository-integrity smoke test with `python tests/smoke_test.py`.
+- Removed the smoke-test / integrity-check portion from the public repository.
 - Reran text audit for private paths and sensitive terms; remaining hits are citation names, general external-dependency terms, or benign MATLAB variable names such as `token`/`tok` used in parsers.

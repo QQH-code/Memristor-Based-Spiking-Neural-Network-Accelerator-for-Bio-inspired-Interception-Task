@@ -89,10 +89,6 @@ docs/
 audit/
   Source-to-public file map, figure inventory, release-curation notes, and public
   repository audit records.
-
-tests/
-  Lightweight repository-integrity checks. These tests do not generate scientific
-  results or run circuit simulations.
 ```
 
 ## How to Read This Repository
@@ -138,16 +134,6 @@ The public templates use placeholders such as `$SPECTRE_BIN`, `$PDK_ROOT`, `$SPE
 - Raw Spectre outputs, logs, `.print` files, or simulator run directories.
 - MATLAB binary artifacts such as `.mat` and `.fig`.
 - Private paths, server paths, personal emails, or local setup files.
-
-## Integrity Check
-
-Run the repository-integrity check:
-
-```bash
-python tests/smoke_test.py
-```
-
-This check only verifies the public release structure and excluded-artifact rules. It does not run circuit simulations.
 
 ## License
 
