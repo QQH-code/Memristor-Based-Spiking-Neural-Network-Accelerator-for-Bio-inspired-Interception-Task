@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+title: "Memristor-Based Spiking Neural Network Accelerator: Public Research Code Release"
+message: "If you use this repository, please cite both associated arXiv papers."
+type: software
+repository-code: "https://github.com/QQH-code/Memristor-Based-Spiking-Neural-Network-Accelerator-for-Bio-inspired-Interception-Task"
+authors:
+  - family-names: Qu
+    given-names: Qianhou
+  - family-names: Lu
+    given-names: Sheng
+  - family-names: Shang
+    given-names: Liuting
+  - family-names: Utailawon
+    given-names: Jaihan
+  - family-names: Jung
+    given-names: Sungyong
+  - family-names: Liang
+    given-names: Qilian
+  - family-names: Pan
+    given-names: Chenyun
+references:
+  - type: article
+    title: "Compact and Energy-Efficient Memristive Spiking Neuromorphic Accelerator for Bio-inspired Interception Tasks"
+    authors:
+      - family-names: Qu
+        given-names: Qianhou
+      - family-names: Lu
+        given-names: Sheng
+      - family-names: Jung
+        given-names: Sungyong
+      - family-names: Liang
+        given-names: Qilian
+      - family-names: Pan
+        given-names: Chenyun
+    doi: "10.48550/arXiv.2605.31141"
+    url: "https://arxiv.org/abs/2605.31141"
+  - type: article
+    title: "Memristor-Based Spiking Neural Network Accelerator for Bio-inspired Interception Task"
+    authors:
+      - family-names: Qu
+        given-names: Qianhou
+      - family-names: Lu
+        given-names: Sheng
+      - family-names: Shang
+        given-names: Liuting
+      - family-names: Utailawon
+        given-names: Jaihan
+      - family-names: Jung
+        given-names: Sungyong
+      - family-names: Liang
+        given-names: Qilian
+      - family-names: Pan
+        given-names: Chenyun
+    doi: "10.48550/arXiv.2605.31299"
+    url: "https://arxiv.org/abs/2605.31299"

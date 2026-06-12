@@ -1,0 +1,3 @@
+# Python dependencies for repository curation utilities.
+# The research workflow itself is primarily MATLAB plus external Cadence/Spectre.
+pillow>=10.0

@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Local environment and OS files
+.env
+.DS_Store
+Thumbs.db
+
+# MATLAB
+*.asv
+*.fig
+*.mat
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.backup
+*.old
+
+# Large/generated data
+outputs/
+results/raw/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+
+# Cadence/Spectre generated artifacts
+*.raw/
+*.raw
+*.tr0
+*.sw0
+*.lis
+*.st0
+*.ic0
+*.mt0
+*.fsdb
+*.vcd
+*.psf
+*.psfxl
+psf/
+psfxl/
+spectre.out
+*.log
+*.print
+*.tran
+*.ahdlSimDB/
+input.scs
+*.st0
+*.ic
+
+# Cadence/Spectre environment files
+.cdsinit
+.cdsenv
+cds.lib
+*.simrc
+*.artist_states/
+
+# Private/local configuration
+local_config.*
+private_config.*
+
+# Large/private source artifacts intentionally excluded
+*.pdf
+*.pptx
+*.vsdx

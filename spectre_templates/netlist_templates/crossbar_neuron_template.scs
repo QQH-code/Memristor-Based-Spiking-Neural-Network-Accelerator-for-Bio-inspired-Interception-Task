@@ -1,0 +1,21 @@
+// Spectre template for the memristive SNN accelerator experiments.
+// Replace placeholders before use:
+//   ${PDK_MODEL_FILE}
+//   ${RRAM_MODEL_FILE}
+//   ${GENERATED_ARRAY_NETLIST}
+//   ${OUTPUT_DIR}
+
+simulator lang=spectre
+global 0 vdd
+
+include "${PDK_MODEL_FILE}"
+ahdl_include "${RRAM_MODEL_FILE}"
+include "${GENERATED_ARRAY_NETLIST}"
+
+parameters vdd_val=1.8 vref=0.9
+VDD (vdd 0) vsource type=dc dc=vdd_val
+
+// The original research flow generates a full crossbar subcircuit from MATLAB.
+// This template intentionally avoids embedding private PDK or server paths.
+saveOptions options save=selected
+tran tran stop=20u maxstep=1n

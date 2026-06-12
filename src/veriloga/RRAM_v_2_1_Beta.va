@@ -1,0 +1,271 @@
+/*********************************************************************************************
+*                         RRAM SPICE Model
+*                        Coded in Verilog-A 
+*	                    Combined Version 2.0
+*********************************************************************************************/
+
+`include "disciplines.vams" 
+`include "constants.vams"
+
+module RRAM_v_2_0_Beta(t,b,xmon,wmon) ;
+
+	electrical t , b, xmon, wmon;
+	inout t , b, xmon, wmon;
+
+	// parameter list: begin
+	parameter real a = 0.25e-9 ;
+	parameter real f = 1e13 ;
+	parameter real Ea = 0.7 ;
+	parameter real Eh = 1.12 ;
+	parameter real Ei = 0.82 ;
+	parameter real r = 1.5 ;
+	parameter real alphah = 0.75e-9 ;
+	parameter real alpha = 0.75e-9 ;
+	parameter real Z = 1 ;
+	parameter real XT = 0.4e-9 ;
+	parameter real VT = 0.4 ;
+	parameter real L0 = 3e-9 ;
+	parameter real x0 = 3e-9 ;
+	parameter real w0 = 0.5e-9 ;
+	parameter real WCF = 5e-9 ;
+	parameter real weff = 0.5e-9 ;
+	parameter real I0 = 1e13 ;
+	parameter real rou = 1.9635e-5 ;
+	parameter real pi = 3.1415926 ;
+	parameter real Rth = 5e5 ;
+	parameter real Kb = 8.61733e-5 ;
+	parameter real T0 = 300 ;
+
+    parameter real x_scale = 1e9;
+    parameter real w_scale = 1e9;
+
+	parameter real switch = 0 ;
+	parameter real deltaGap	= 4e-5 ;
+	parameter real deltaCF  = 1e-4 ;
+	parameter real crit_x = 0.5e-9 ;
+	parameter real user_seed = 42 ;
+
+    /**************************************************
+     * Read noise parameters (relative-only, sigma depends on G)
+     **************************************************/
+    parameter integer enable_read_noise = 1;     // 1 enable, 0 disable
+    parameter real    Vread_max = 0.25;          // V, |V| <= Vread_max treated as read
+    parameter real    noise_tau = 10e-9;         // s, noise update/correlation time
+    parameter integer noise_seed_offset = 1000;  // decorrelate from write-noise seed
+
+    // --- sigma_rel(G) = sigma0 * (G/G0)^(-p), with clamps ---
+    parameter real sigma0 = 0.035;                // relative std at G = G0 (e.g. 2%)
+    parameter real G0 = 7e-6;                    // S, reference conductance (choose near mid-state)
+    parameter real p_sigma = 0.95;                // p>0 => smaller G => larger relative noise
+    parameter real sigma_rel_min = 0;        // lower clamp (0.4%)
+    parameter real sigma_rel_max = 0.35;          // upper clamp (30%)
+    parameter real G_floor = 1e-42;              // S, avoid divide-by-zero / blow-up
+	// parameter list: end
+
+	// control variables
+	real Temp=T0 ;
+
+	// CF evolution speed
+	real dxr1 ;
+	real dxr2 ;
+	real dxs ;
+	real dx=0 ;   
+	real dw=0 ;
+
+	// initial CF geometry
+	real x=x0 ;    
+	real w=w0 ;
+	real RCF ;
+
+	// intermediate electrical parameters
+	real Vg ;
+	real I1 ;
+
+    // read noise internal vars
+    real I_ideal;
+    real I_noise;
+    real noise_hold;
+    real last_noise_t;
+    integer read_noise_seed;
+
+    // --- added for sigma(G) ---
+    real G_read;
+    real sigma_rel_eff;
+    real sigma_rel_raw;
+    real y_sat;
+    real Veff;
+
+	// variation seeds
+	integer rand_seed_set  ;
+	integer rand_seed_reset ;
+	real cf_random_ddt ;       
+	real gap_random_ddt ;
+
+	analog 
+	begin
+		Temp = T0 + abs(I(t,b) * V(t,b)) * Rth ;
+		I1 = I0*pi*(WCF*WCF/4-w*w/4)*exp(-L0/XT)*sinh(V(t,b)/VT) ;
+		RCF = rou*(L0-x)/(pi*w*w/4) ;            
+		Vg = V(t,b) - (I(t,b)-I1)*RCF ;
+
+		// --- state update (unchanged) ---
+		if ( V(t,b) > 0 ) 
+		begin
+			if ( x > 0 )
+			begin
+				dxs = -a*f*exp(-(Ea-Vg*alpha*Z/x)/(Kb*Temp)) ;
+				if ( abs(dxs) <= 1e2 ) dx = dxs ;
+				else dx = -1e2 ;
+			end
+			else dx = 0 ;
+
+			if ( w < WCF )
+			begin
+				dw = (x>0)*0 + (x<=0)*(weff+pow(weff,2)/(2*w))*f*exp(-(Ea-V(t,b)*alpha*Z/L0)/(Kb*Temp)) ;
+				if ( dw > 1e2 ) dw = 1e2 ;
+			end
+			else dw = 0 ;
+		end
+		else if ( V(t,b) < 0 )
+		begin
+			dw = 0 ;
+			if ( x <= 0 )
+			begin
+				dxr1 = a*f*exp(-(Ei+r*Z*Vg)/(Kb*Temp)) ;
+				dx = dxr1 ;
+			end
+			else
+			begin
+				if ( x < L0 )
+				begin
+					dxr1 = a*f*exp(-(Ei+r*Z*Vg)/(Kb*Temp)) ;
+					dxr2 = a*f*exp(-Eh/(Kb*Temp))*sinh(alphah*Z*-1*Vg/(x*Kb*Temp)) ;
+					dx = (dxr1<dxr2)*dxr1 + (dxr2<=dxr1)*dxr2 ;
+				end
+				else dx = 0 ;
+			end
+		end
+		else
+		begin
+			dx = 0 ;
+			dw = 0 ;
+		end
+
+        /********************************************
+        ****** electrical behavior: compute I_ideal
+        ********************************************/
+        I_ideal = 0;
+		if ( V(t,b) == 0 )
+			I_ideal = 0 ;
+		else if ( V(t,b) > 0 )
+		begin
+			if ( x > 0 )
+				I_ideal = I1 + I0*pi*(w*w/4)*exp(-x/XT)*sinh(Vg/VT) ;
+			else
+				I_ideal = I1 + V(t,b)/(rou*L0/(pi*w*w/4)) ;
+		end
+		else
+			I_ideal = I1 + I0*pi*(w*w/4)*exp(-x/XT)*sinh(Vg/VT) ;
+
+        /********************************************
+        ****** read noise injection: sigma depends on G
+        ********************************************/
+        I_noise = 0;
+        if (enable_read_noise == 1)
+        begin
+            if (abs(V(t,b)) > 0 && abs(V(t,b)) <= Vread_max)
+            begin
+                // sample-and-hold for noise
+                if (last_noise_t == 0)
+                begin
+                    last_noise_t = $abstime;
+                    noise_hold = 0;
+                end
+
+                if (($abstime - last_noise_t) >= noise_tau)
+                begin
+                    last_noise_t = $abstime;
+                    read_noise_seed = $random + user_seed + noise_seed_offset;
+                    noise_hold = $rdist_normal(read_noise_seed, 0, 1); // N(0,1)
+                end
+
+                // compute effective conductance during read: G = |I/V|
+                Veff = abs(V(t,b));
+                if (Veff < 1e-12) Veff = 1e-12;  // safety
+                G_read = abs(I_ideal) / Veff;
+
+                // floor G to avoid blow-up
+                if (G_read < G_floor) G_read = G_floor;
+
+                // raw power-law sigma
+                sigma_rel_raw = sigma0 * pow((G_read / G0), (-p_sigma));
+
+                // smooth saturation instead of hard clamp
+                // first enforce lower floor softly by shifting from sigma_rel_min
+                if (sigma_rel_raw <= sigma_rel_min)
+                begin
+                    sigma_rel_eff = sigma_rel_min;
+                end
+                else
+                begin
+                    y_sat = (sigma_rel_raw - sigma_rel_min) / (sigma_rel_max - sigma_rel_min);
+                    sigma_rel_eff = sigma_rel_min
+                                  + (sigma_rel_max - sigma_rel_min) * ( y_sat / (1.0 + y_sat) );
+                end
+
+                // pure relative noise: I_meas = I_ideal * (1 + sigma_rel_eff * N)
+                I_noise = (sigma_rel_eff * I_ideal * noise_hold);
+            end
+        end
+
+        I(t,b) <+ I_ideal + I_noise;
+
+		// --- variation & state integration (unchanged) ---
+		if ( switch == 1 )
+		begin	
+			if ( V(t,b) > 0 )
+			begin
+				if ( dw == 0 )
+					cf_random_ddt = 0 ;
+				else
+				begin
+					rand_seed_set = $random + user_seed ;
+					cf_random_ddt = $rdist_normal(rand_seed_set,0,1) * deltaCF ;
+				end
+			end
+			else if ( V(t,b) < 0 )
+			begin
+				if ( x < crit_x )
+					gap_random_ddt = 0 ;
+				else
+				begin
+					rand_seed_reset = $random + user_seed ;
+					gap_random_ddt = $rdist_normal(rand_seed_reset,0,1) * deltaGap ;
+				end
+			end
+			else
+			begin
+				gap_random_ddt = 0 ;
+				cf_random_ddt = 0 ;
+			end
+		end
+		else
+		begin
+			gap_random_ddt = 0 ;
+			cf_random_ddt = 0 ;
+		end
+		
+		x = idt(dx+gap_random_ddt,x0) ;
+		w = idt(dw+cf_random_ddt,w0) ;
+	
+		if ( x < 0 ) x = 0 ;
+		if ( x > L0 ) x = L0 ;
+		if ( w > WCF ) w = WCF ;
+
+        V(xmon) <+ x * x_scale;
+        V(wmon) <+ w * w_scale;
+	end
+endmodule
+/*******************************************************************
+   END
+*******************************************************************/

@@ -1,0 +1,21 @@
+{
+  "figure_source": "manually curated figure folder",
+  "figures_expected": 5,
+  "figures_included": 5,
+  "figures_missing_source": 0,
+  "automatic_powerpoint_extraction_used_for_final_set": false,
+  "source_files": [
+    "Picture1.png",
+    "Picture2.png",
+    "Picture3.png",
+    "Picture4.png",
+    "Picture5.png"
+  ],
+  "output_files": [
+    "figures/paper_figures/fig01_task_overview.png",
+    "figures/paper_figures/fig02_accelerator_architecture.png",
+    "figures/paper_figures/fig03_system_level_result_1.png",
+    "figures/paper_figures/fig04_system_level_result_2.png",
+    "figures/paper_figures/fig05_neuron_layout.png"
+  ]
+}

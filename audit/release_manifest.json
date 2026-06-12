@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-06-10T23:29:49",
+  "target": "$PUBLIC_REPO_ROOT",
+  "source_root": "$SOURCE_MATERIAL_ROOT",
+  "primary_code_source": "$SOURCE_MATERIAL_ROOT/SNN_snntorch_spectre_rram_stf_version3",
+  "paper_pdf_present": true,
+  "copied_file_count": 26,
+  "teacher_example_parameter_counts": {
+    "[2,128,128,128,1]": 33537,
+    "[2,96,96,96,1]": 19009,
+    "[2,64,64,64,1]": 8577
+  },
+  "repository_url": "https://github.com/QQH-code/Memristor-Based-Spiking-Neural-Network-Accelerator-for-Bio-inspired-Interception-Task",
+  "toy_quick_start_removed": true,
+  "figure_inventory": "audit/figure_inventory.csv",
+  "final_public_figure_source": "manually curated figure folder",
+  "automatic_powerpoint_extraction_used_for_final_set": false,
+  "manual_public_figure_count": 5
+}

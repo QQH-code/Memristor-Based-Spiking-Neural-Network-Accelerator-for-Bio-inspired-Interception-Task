@@ -1,0 +1,57 @@
+`include "constants.vams"
+`include "disciplines.vams"
+
+module resistor_rand_min(p, n);
+    inout p, n;
+    electrical p, n;
+
+    parameter real R0    = 1000k from (0:inf);
+	
+    // fit-curve parameters for read noise
+    parameter real sigma0         = 0.035 from [0:inf);
+    parameter real G0             = 7e-6 from (0:inf);
+    parameter real p_sigma        = 0.95 from [0:inf);
+    parameter real sigma_rel_max  = 0.35 from [0:inf);
+    parameter real k              = 1.0 from (0:inf);
+	
+    // gating parameters
+    parameter real vth_gate       = 0.03 from [0:inf);   // 30 mV
+    parameter real vsmooth        = 0.001 from (0:inf);  // 5 mV
+    parameter real gmin_rel       = 1e-18 from (0:1);     // small residual conduction
+	
+    integer seed;
+    real x;
+    real R;
+    real sigma_rel_raw;
+    real sigma_rel;
+    real alpha_fit;
+	
+    real vabs;
+    real gate_raw;
+    real gate_eff;
+
+    analog begin
+        @(initial_step) begin
+            seed = 22;
+            x = $rdist_uniform(seed, -1.0, 1.0);
+        end
+
+        sigma_rel_raw = sigma0 * pow(R0 * G0, p_sigma);
+        sigma_rel     = (sigma_rel_max * sigma_rel_raw) /
+                        (sigma_rel_max + sigma_rel_raw);
+
+		alpha_fit = (k * sigma_rel) / (1.0 - k * sigma_rel);
+
+        // R = R0 * (1.0 + alpha_fit * x);
+		R = R0 * (1.0 + alpha_fit * x);
+        vabs = abs(V(p, n));
+
+        // smooth gate:
+        // |V| << vth_gate  -> gate_eff ~= gmin_rel
+        // |V| >> vth_gate  -> gate_eff ~= 1
+        gate_raw = 0.5 * (1.0 + tanh((vabs - vth_gate) / vsmooth));
+        gate_eff = gmin_rel + (1.0 - gmin_rel) * gate_raw;
+
+        I(p, n) <+ gate_eff * V(p, n) / R;
+    end
+endmodule
