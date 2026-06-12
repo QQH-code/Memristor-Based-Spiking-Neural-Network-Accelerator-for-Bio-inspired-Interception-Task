@@ -25,7 +25,6 @@ src/veriloga/
 src/data_examples/
 spectre_templates/
 figures/
-scripts/
 tests/
 audit/
 ```
@@ -67,6 +66,8 @@ The artificial LIF quick-start demo was removed during the finalization pass.
 
 The repository now focuses on actual available research files, sanitized templates, public figures, documentation, and audit records.
 
+Empty placeholder `scripts/` and `examples/` directories were removed. No artificial demos were added.
+
 ## Manual Figure Curation Update
 
 Automatic PowerPoint extraction was not used for the final public figure set.
@@ -98,6 +99,15 @@ The pending license placeholder was removed.
 - The license file is located at `LICENSE`.
 - The former pending-license placeholder file was deleted.
 - README and documentation were updated accordingly.
+
+## Documentation Polish Update
+
+- `REPOSITORY_PREPARATION_REPORT.md` was moved into `audit/` so it remains available as an internal release-curation record without being presented as required homepage reading.
+- `docs/overview.md` was expanded with motivation, repository scope, exclusions, and interpretation guidance.
+- `docs/project_flow.md` was expanded into a technical workflow map tied to public folders and script names.
+- `docs/spectre_simulation_workflow.md` was expanded with placeholder meanings and external tool requirements.
+- `docs/figure_description.md` and `figures/README.md` were tightened around the five manually curated figures.
+- `docs/release_notes_v0.1.0.md` was added as a draft release note for the initial public research-code release.
 
 ## Spectre-Related Files Included as Templates
 
@@ -174,8 +184,10 @@ Remaining manual review before release:
 ## Verification Performed
 
 - Updated README and CITATION.cff with the final GitHub URL.
+- Moved this preparation report to `audit/REPOSITORY_PREPARATION_REPORT.md`.
 - Removed the artificial quick-start demo and generated toy figure.
 - Replaced the old auto-extracted figure set with the manually curated figure set.
 - Generated `audit/figure_inventory.csv` and `audit/figure_inventory_summary.json`.
+- Added draft release notes in `docs/release_notes_v0.1.0.md`.
 - Ran the repository-integrity smoke test with `python tests/smoke_test.py`.
 - Reran text audit for private paths and sensitive terms; remaining hits are citation names, general external-dependency terms, or benign MATLAB variable names such as `token`/`tok` used in parsers.

@@ -1,24 +1,50 @@
 # Spectre Simulation Workflow
 
-The `spectre_templates/` folder contains sanitized workflow templates only.
+This repository includes sanitized Spectre workflow templates, but it does not include a runnable Cadence/Spectre environment. Spectre is external because it is a licensed EDA tool, and compatible 130 nm PDK/ODK model libraries are also external technology resources.
 
-Users must configure their own environment, for example:
+## Included Template Files
 
-```bash
-export SPECTRE_BIN=/path/to/spectre
-export PDK_MODEL_FILE=/path/to/130nm/models.scs
-export RRAM_MODEL_FILE=$PWD/src/veriloga/RRAM_v_2_1_Beta.va
-```
+- `spectre_templates/README.md`
+- `spectre_templates/netlist_templates/crossbar_neuron_template.scs`
+- `spectre_templates/run_scripts/run_spectre_template.sh`
 
-The templates intentionally avoid private paths and licensed technology files. They are provided to document the structure of the workflow and help users adapt the setup to their own authorized environment.
+These files document the structure of the circuit-simulation workflow and provide a starting point for users who have their own authorized simulator and PDK/ODK setup.
 
-Required external resources:
+## Placeholder Meanings
 
-- Cadence Spectre
-- a valid Cadence license
-- a configured 130 nm PDK/ODK model environment
-- local generated netlists or simulator input data
-- writable local run directories
+- `$SPECTRE_BIN`: path to the local Spectre executable or wrapper script.
+- `$PDK_ROOT`: root directory of the user's local 130 nm PDK/ODK installation.
+- `$SPECTRE_MODEL_DIR`: directory containing local simulator model files.
+- `$CADENCE_HOME`: root of the local Cadence installation, if needed by user scripts.
+- `$PROJECT_ROOT`: local path to this repository or to a configured working copy.
 
-This repository does not include simulator binaries, license files, PDK/ODK model libraries, raw waveform outputs, or private server configuration.
+These placeholders intentionally replace private machine paths and server-specific configuration.
 
+## What Users Must Supply
+
+Users who want to adapt the circuit workflow must provide:
+
+- a licensed Cadence/Spectre installation,
+- a compatible 130 nm PDK/ODK,
+- valid model-library paths,
+- any generated circuit netlists required by their experiment,
+- local simulation output directories,
+- local environment setup compatible with their institution or tool installation.
+
+## What Should Not Be Expected From GitHub
+
+This repository does not provide:
+
+- proprietary model libraries,
+- PDK/ODK files,
+- Cadence license files,
+- simulator binaries,
+- server setup scripts,
+- raw simulator outputs,
+- complete turnkey circuit-level reproduction.
+
+## How To Use the Templates
+
+Treat the files under `spectre_templates/` as workflow documentation and starting templates. Before running them, replace placeholders with local environment variables and verify that all model includes and generated netlists point to files you are authorized to use.
+
+The templates are intentionally conservative. They show the shape of the workflow without exposing private paths or licensed technology files.

@@ -18,7 +18,7 @@ def main() -> None:
         ".gitignore",
         "requirements.txt",
         "environment.yml",
-        "REPOSITORY_PREPARATION_REPORT.md",
+        "audit/REPOSITORY_PREPARATION_REPORT.md",
         "audit/figure_inventory.csv",
         "figures/paper_figures/fig01_task_overview.png",
         "figures/paper_figures/fig02_accelerator_architecture.png",

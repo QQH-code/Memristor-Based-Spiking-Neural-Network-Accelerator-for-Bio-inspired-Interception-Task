@@ -6,18 +6,6 @@ repository-code: "https://github.com/QQH-code/Memristor-Based-Spiking-Neural-Net
 authors:
   - family-names: Qu
     given-names: Qianhou
-  - family-names: Lu
-    given-names: Sheng
-  - family-names: Shang
-    given-names: Liuting
-  - family-names: Utailawon
-    given-names: Jaihan
-  - family-names: Jung
-    given-names: Sungyong
-  - family-names: Liang
-    given-names: Qilian
-  - family-names: Pan
-    given-names: Chenyun
 references:
   - type: article
     title: "Compact and Energy-Efficient Memristive Spiking Neuromorphic Accelerator for Bio-inspired Interception Tasks"

@@ -8,6 +8,10 @@ Repository URL:
 
 <https://github.com/QQH-code/Memristor-Based-Spiking-Neural-Network-Accelerator-for-Bio-inspired-Interception-Task>
 
+## Repository Status
+
+This repository is a curated public research-code release associated with the related papers. It is intended to document the research workflow and provide public access to selected code, models, templates, and figures. It is not a complete turnkey reproduction package.
+
 ## Project Overview
 
 ### Bio-inspired interception task
@@ -79,7 +83,8 @@ Start with:
 - [docs/project_flow.md](docs/project_flow.md) for how the MATLAB, Verilog-A, and Spectre workflow pieces relate.
 - [docs/spectre_simulation_workflow.md](docs/spectre_simulation_workflow.md) for external circuit-simulation requirements.
 - [docs/figure_description.md](docs/figure_description.md) for the included public figure inventory.
-- [REPOSITORY_PREPARATION_REPORT.md](REPOSITORY_PREPARATION_REPORT.md) for the release-curation and privacy-audit summary.
+
+Internal release-curation and privacy-audit records are stored under `audit/`.
 
 The MATLAB and Spectre-related files reflect the original research workflow, but some scripts expect generated simulator outputs or local tool configuration that are not part of this public repository.
 
@@ -127,6 +132,10 @@ This check only verifies the public release structure and excluded-artifact rule
 ## License
 
 This repository is released under the MIT License. See [LICENSE](LICENSE) for details.
+
+## Suggested GitHub Topics
+
+`memristor`, `spiking-neural-networks`, `neuromorphic-computing`, `vlsi`, `ai-hardware`, `spectre`, `verilog-a`, `rram`
 
 ## Disclaimer
 
